@@ -7,9 +7,8 @@
     <script type="text/javascript" src="app.js"></script>
 </head>
 <body ng-controller="MainController">
-    <div ng-controller="Test1">{{data.someData}}</div>
-    <div ng-controller="Test2">
-        <input type="button" value="Change Data" ng-click="changeData()">
-    </div>
+    {{ 12 | currency }} <br />
+    {{ 34 | number:2 }} <br />
+    {{ "MyText" | decorator:"--" }}
 </body>
 </html>
