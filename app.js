@@ -8,13 +8,13 @@ app.factory('MyLogginService', function(){
     };
 });
 
-app.factory('AlertLogginService', function () {
+app.factory('AlertLogginService', ['$window',function ($window) {
     return {
         log: function (argument) {
-            window.alert(argument);
+            $window.alert(argument);
         }
     };
-});
+}]);
 
 app.controller('MainController', ['$scope', 'AlertLogginService',
     function($scope, logger){
@@ -24,3 +24,35 @@ app.controller('MainController', ['$scope', 'AlertLogginService',
         logger.log('Hello!');
     };
 }]);
+
+app.factory('SharedData', function(){
+    return {
+        someData: 'Test'
+    };
+});
+
+app.controller('Test1', ['$scope', 'SharedData', function($scope, sharedData){
+    $scope.data = sharedData;
+}]);
+
+app.controller('Test2', ['$scope', 'SharedData', function($scope, sharedData){
+    $scope.changeData = function(){
+        sharedData.someData = 'Data Changed!';
+    };
+}]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
