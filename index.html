@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <title>Hello, Angular!</title>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.js"></script>
-</head>
-<body>
-    Name: <input type="text" ng-model="name"><br />
-    Hello, {{name}}!
     <script type="text/javascript" src="app.js"></script>
+</head>
+<body ng-controller="MainController">
+    Name: <input type="text" ng-model="name"><br />
+    Hello, {{name}}!<br />
+    <input type="button" value="Click" ng-click="myFunc()">
 </body>
 </html>
